@@ -1,9 +1,10 @@
 package org.example.Models;
 
 public class InternationalOrder extends Order implements Deliverable {
+    private static String interVendor = "DHL";
 
-    public InternationalOrder(String customerName, String customerSurname, double price) {
-        super(customerName, customerSurname, price);
+    public InternationalOrder(Customer customer, double price) {
+        super(customer, price);
     }
 
     @Override
@@ -11,9 +12,18 @@ public class InternationalOrder extends Order implements Deliverable {
         return price * 0.2;
     }
 
+    public static String getInterVendor() {
+        return interVendor;
+    }
+
+    public static void setInterVendor(String interVendor) {
+        InternationalOrder.interVendor = interVendor;
+    }
 
     public void printSummary() {
         super.printSummary();
-        System.out.print(" Type: International order. Delivery Price: AMD " + calculateDeliveryPrice());
+        System.out.print("Type: International order. Delivery Price: AMD " + calculateDeliveryPrice() + " Vendor: " + getInterVendor());
+        System.out.println();
     }
+
 }
