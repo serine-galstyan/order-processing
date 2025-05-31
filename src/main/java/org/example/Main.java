@@ -8,11 +8,9 @@ import org.example.Models.Order;
 
 public class Main {
     public static void main(String[] args) {
-//        Order order = new ExpressOrder("John Smith", 1500);
-//        order.printSummery();
 
         Customer orderCustomer = new Customer("John", "Smith", "+37499778866");
-        Customer expressOrderCustomer = new Customer("Gegham", "Karapetyan", "+37455664385", "Ara Sargsyan str., 10/1");
+        Customer expressOrderCustomer = new Customer("Gegham", "Karapetyan", "+37455664385");
         Customer internationalOrderCustomer = new Customer("Levon", "Hakobyan", "+12124567890");
         Customer orderCustomer2 = new Customer("Maria", "Harutyunyan", "+37455578787");
 
@@ -28,7 +26,6 @@ public class Main {
         for (Order item : orderList) {
             item.printSummary();
             System.out.println();
-//            System.out.print("Phone number: " + item.getCustomerPhoneNumber() + "Address: " + item.getCustomerAddress() );
         }
 
         System.out.println("____________________________________________________________________________________________________________");

@@ -3,8 +3,6 @@ package org.example.Models;
 public class Order {
     protected String customerName;
     protected String customerSurname;
-    protected String customerPhoneNumber;
-    protected String customerAddress;
     protected double price;
 
     public Order(String customerName, String customerSurname) {
@@ -46,13 +44,5 @@ public class Order {
 
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    public String getCustomerAddress() {
-        return customerAddress;
-    }
-
-    public String getCustomerPhoneNumber() {
-        return customerPhoneNumber;
     }
 }
