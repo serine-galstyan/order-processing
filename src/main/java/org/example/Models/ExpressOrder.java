@@ -1,9 +1,10 @@
 package org.example.Models;
 
-public class ExpressOrder extends Order implements Deliverable{
+public class ExpressOrder extends Order implements Deliverable {
 
-    public ExpressOrder(String customerName, double price){
-        super(customerName,price);
+    public ExpressOrder(String customerName, String customerSurname, double price) {
+        super(customerName, customerSurname, price);
+        this.customerName = customerName;
     }
 
     @Override
@@ -11,10 +12,9 @@ public class ExpressOrder extends Order implements Deliverable{
         return price * 0.1;
     }
 
-
-    public void printSummary(){
+    public void printSummary() {
         super.printSummary();
-        System.out.println("Type: Express order. Delivery Price $" + calculateDeliveryPrice());
+        System.out.print(" Type: Express order. Delivery Price: AMD " + calculateDeliveryPrice());
     }
 
 }

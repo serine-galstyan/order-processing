@@ -1,21 +1,27 @@
 package org.example.Models;
 
 public class Order {
-     protected String customerName;
-     protected double price;
+    protected String customerName;
+    protected String customerSurname;
+    protected String customerPhoneNumber;
+    protected String customerAddress;
+    protected double price;
 
-     public Order(String customerName){
-         this.customerName = customerName;
-         this.price = 0;
-     }
-
-    public Order(String customerName, double price){
+    public Order(String customerName, String customerSurname) {
         this.customerName = customerName;
+        this.customerSurname = customerSurname;
+        this.price = 0;
+    }
+
+    public Order(String customerName, String customerSurname, double price) {
+        this.customerName = customerName;
+        this.customerSurname = customerSurname;
         this.price = price;
     }
 
-    public void printSummary(){
-         System.out.print("Customer: " + customerName + "Price: AMD " + price);
+    public void printSummary() {
+        System.out.println();
+        System.out.print("Customer: " + customerName + " " + customerSurname + " Price: AMD " + price);
     }
 
     public double getPrice() {
@@ -30,7 +36,23 @@ public class Order {
         this.customerName = customerName;
     }
 
+    public void setCustomerSurname(String customerSurname) {
+        this.customerSurname = customerSurname;
+    }
+
+    public String getCustomerSurname() {
+        return customerSurname;
+    }
+
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getCustomerAddress() {
+        return customerAddress;
+    }
+
+    public String getCustomerPhoneNumber() {
+        return customerPhoneNumber;
     }
 }
