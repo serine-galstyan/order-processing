@@ -1,22 +1,34 @@
 package org.example.Models;
 
-public class Address {
+import java.util.Comparator;
+
+public class Address{
     private String country;
     private String city;
     private String street;
     private String house;
 
 
-    public Address(String country, String city, String street, String house){
-        this.country = country;
+    public Address(String country, String city, String street, String house) throws CountryException{
+        if(country.equals("Georgia")){
+            throw new CountryException();
+        }else{
+            this.country = country;
+        }
         this.city = city;
         this.street = street;
         this.house = house;
     }
 
     public void setCountry(String country) {
-        this.country = country;
+        try {
+            country.equals("Georgia");
+            this.country = country;
+        } catch (CountryException e) {
+            System.out.println(e.toString());
+        }
     }
+
 
     public void setCity(String city) {
         this.city = city;
@@ -52,4 +64,7 @@ public class Address {
         System.out.println("Address: " + country + ", " + city + ", " + street + ", " + house);
     }
 
+    public String toString(){
+        return country + " " + city + " " + street + " " + house;
+    }
 }

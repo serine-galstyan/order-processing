@@ -1,6 +1,8 @@
 package org.example.Models;
 
-public class Customer {
+import java.util.Comparator;
+
+public class Customer implements Comparable<Customer> {
     private String firstName;
     private String lastName;
     private String email;
@@ -67,6 +69,19 @@ public class Customer {
         System.out.println("Customer: " + firstName + " " + lastName + " " + email + " " + phoneNumber);
     }
 
+    public String toString(){
+        return firstName + " " + lastName + " " + email + " " + phoneNumber + " " + address;
+    }
+
+
+    @Override
+//    public int compareTo(Customer customer) {
+//        return this.getFirstName().compareTo((customer.getFirstName()));
+//    }
+
+    public int compareTo(Customer customer) {
+        return this.getLastName().compareTo((customer.getLastName()));
+    }
 }
 
 
